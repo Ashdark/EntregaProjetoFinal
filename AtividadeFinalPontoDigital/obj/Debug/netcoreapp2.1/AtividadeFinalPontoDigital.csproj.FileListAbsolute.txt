@@ -115,3 +115,4 @@ C:\Users\45579480814\Desktop\PontoDigital-master\Senai\PontoDigital-master\Ativi
 C:\Users\45579480814\Desktop\PontoDigital-master\Senai\PontoDigital-master\AtividadeFinalPontoDigital\obj\Debug\netcoreapp2.1\AtividadeFinalPontoDigital.dll
 C:\Users\45579480814\Desktop\PontoDigital-master\Senai\PontoDigital-master\AtividadeFinalPontoDigital\obj\Debug\netcoreapp2.1\AtividadeFinalPontoDigital.pdb
 C:\Users\45579480814\Desktop\PontoDigital-master\Senai\PontoDigital-master\AtividadeFinalPontoDigital\obj\Debug\netcoreapp2.1\AtividadeFinalPontoDigital.csproj.CopyComplete
+C:\Users\45579480814\Desktop\PontoDigital-master\Senai\PontoDigital-master\AtividadeFinalPontoDigital\obj\Debug\netcoreapp2.1\Razor\Views\Login\ComentariosReprovados.g.cshtml.cs

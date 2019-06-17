@@ -52,7 +52,7 @@ namespace AtividadeFinalPontoDigital.Controllers
         ViewData["comentariosaprovados"] = comentarioRepositorio.ListarAprovados();
         return View();
         }
-        public IActionResult VerComentariosReprovados(){
+        public IActionResult ComentariosReprovados(){
         ViewData["comentariosreprovados"] = comentarioRepositorio.ListarReprovados();
         return View();
         }
