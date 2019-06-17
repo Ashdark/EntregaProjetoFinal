@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45579480814\\Desktop\\PontoDigital-master\\Senai\\PontoDigital-master\\AtividadeFinalPontoDigital\\AtividadeFinalPontoDigital.csproj",
+      "projectUniqueName": "C:\\Users\\45579480814\\Desktop\\PontoDigital-master\\AtividadeFinalPontoDigital\\AtividadeFinalPontoDigital.csproj",
       "projectName": "AtividadeFinalPontoDigital",
-      "projectPath": "C:\\Users\\45579480814\\Desktop\\PontoDigital-master\\Senai\\PontoDigital-master\\AtividadeFinalPontoDigital\\AtividadeFinalPontoDigital.csproj",
+      "projectPath": "C:\\Users\\45579480814\\Desktop\\PontoDigital-master\\AtividadeFinalPontoDigital\\AtividadeFinalPontoDigital.csproj",
       "packagesPath": "C:\\Users\\45579480814\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45579480814\\Desktop\\PontoDigital-master\\Senai\\PontoDigital-master\\AtividadeFinalPontoDigital\\obj\\",
+      "outputPath": "C:\\Users\\45579480814\\Desktop\\PontoDigital-master\\AtividadeFinalPontoDigital\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

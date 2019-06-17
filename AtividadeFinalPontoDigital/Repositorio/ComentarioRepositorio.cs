@@ -10,13 +10,8 @@ namespace AtividadeFinalPontoDigital.Repositorio
         public ComentarioModel Cadastrar(ComentarioModel comentario){
         Console.WriteLine("Nome:"+comentario.Nome);
         System.Console.WriteLine("comentário:"+comentario.Comentario);
-        if(!File.Exists("Database/Comentarios.csv")){
-            comentario.ID = 1;
-        }else{
-            comentario.ID = File.ReadAllLines("Database/Comentarios.csv").Length+1;
-        }
         StreamWriter sw = new StreamWriter("Database/Comentarios.csv",true);
-        sw.WriteLine($"{comentario.ID}{comentario.Nome};{comentario.Comentario}");
+        sw.WriteLine($"{comentario.Nome};{comentario.Comentario}");
         sw.Close();
         return comentario;
         }
@@ -30,92 +25,12 @@ namespace AtividadeFinalPontoDigital.Repositorio
                 string[] lin = item.Split(";");
                 
                 comentario = new ComentarioModel(
-                    id: int.Parse(lin[0]),
-                    nomecomentario: lin[1],
-                    comentario: lin[2]
+                    nomecomentario: lin[0],
+                    comentario: lin[1]
                 );
                 listaDeComentarios.Add(comentario);
             }
             return listaDeComentarios;
-        }
-        public ComentarioModel Aprovar (ComentarioModel comentario){
-            string [] linhas = File.ReadAllLines("Database/Comentarios.csv");
-            for(int i = 0; i < linhas.Length; i++){
-                string[]linha = linhas[i].Split(";");
-                if(comentario.ID == int.Parse(linha[0])){
-                    linhas[i] = $"{comentario.ID}{comentario.Nome};{comentario.Comentario};Aprovado";
-                }
-            }
-            File.WriteAllLines("Database/ComentariosAprovados.csv", linhas);
-            return comentario;
-        }
-            public ComentarioModel Reprovar (ComentarioModel comentario){
-            string [] linhas = File.ReadAllLines("Database/Comentarios.csv");
-            for(int i = 0; i < linhas.Length; i++){
-                string[]linha = linhas[i].Split(";");
-                if(comentario.ID == int.Parse(linha[0])){
-                    linhas[i] = $"{comentario.ID};{comentario.Nome};{comentario.Comentario};Reprovado";
-                }
-            }
-            File.WriteAllLines("Database/ComentariosReprovados.csv", linhas);
-            return comentario;
-        }
-            public ComentarioModel BuscarPorNome(int id) {
-            string[] linhas = File.ReadAllLines("Database/Comentarios.csv");
-
-            foreach (var item in linhas)
-            {
-                string[] linha = item.Split(";");
-
-                if (id.Equals(linha[0]))
-                {
-                    ComentarioModel comentario= new ComentarioModel();
-                    comentario.ID = int.Parse(linha[0]);
-                    comentario.Nome = linha[1];
-                    comentario.Comentario = linha[2];
-
-                    return comentario;
-                }
-            }
-            return null;
-        }
-            public List<ComentarioModel> ListarAprovados(){
-            List<ComentarioModel> listaDeComentariosAprovados = new List<ComentarioModel>();
-            string[] line = File.ReadAllLines("Database/ComentariosAprovados.csv");
-            ComentarioModel comentario;
-
-            foreach (var item in line)
-            {
-                string[] lin = item.Split(";");
-                
-                comentario = new ComentarioModel(
-                    id: int.Parse(lin[0]),
-                    nomecomentario: lin[1],
-                    comentario: lin[2]
-                );
-                listaDeComentariosAprovados.Add(comentario);
-            }
-            var QuantidadeAprovados = File.ReadAllLines("Database/ComentariosAprovados.csv").Length;
-            return listaDeComentariosAprovados;
-        }
-            public List<ComentarioModel> ListarReprovados(){
-            List<ComentarioModel> listaDeComentariosReprovados = new List<ComentarioModel>();
-            string[] line = File.ReadAllLines("Database/ComentariosReprovados.csv");
-            ComentarioModel comentario;
-
-            foreach (var item in line)
-            {
-                string[] lin = item.Split(";");
-                
-                comentario = new ComentarioModel(
-                    id: int.Parse(lin[0]),
-                    nomecomentario: lin[1],
-                    comentario: lin[2]
-                );
-                listaDeComentariosReprovados.Add(comentario);
-            }
-            var QuantidadeAprovados = File.ReadAllLines("Database/ComentariosReprovados.csv").Length;
-            return listaDeComentariosReprovados;
         }
     }
 }

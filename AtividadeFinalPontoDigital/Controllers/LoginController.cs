@@ -7,7 +7,6 @@ namespace AtividadeFinalPontoDigital.Controllers
 {
     public class LoginController : Controller
     {
-        ComentarioRepositorio comentarioRepositorio = new ComentarioRepositorio();
         [HttpPost]
         public IActionResult Logar (IFormCollection form) {
             UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio ();
@@ -44,17 +43,12 @@ namespace AtividadeFinalPontoDigital.Controllers
         }
         [HttpGet]
         public IActionResult Comentarios(){
-        ViewData["comentariosaprovados"] = comentarioRepositorio.ListarAprovados();
+        ViewData["NomeView"] = "Comentarios - Ponto Digital";
         return View();
     }
     [HttpGet]
         public IActionResult VerComentarios(){
-        ViewData["comentariosaprovados"] = comentarioRepositorio.ListarAprovados();
-        return View();
-        }
-        public IActionResult ComentariosReprovados(){
-        ViewData["comentariosreprovados"] = comentarioRepositorio.ListarReprovados();
-        return View();
+            return View();
         }
         [HttpPost]
         public IActionResult Comentar(IFormCollection form){
@@ -67,23 +61,10 @@ namespace AtividadeFinalPontoDigital.Controllers
 
         return RedirectToAction("Index");
         }
-    public IActionResult AprovarComentario(IFormCollection form){
-                ComentarioModel comentario = new ComentarioModel(
-                nomecomentario: form["Nomecomentario"],
-                comentario: form["Comentario"]
-            );
-     comentarioRepositorio.Aprovar(comentario);
+        // public IActionResult AprovarComentario(){
+        //     ComentarioRepositorio comentarioRepositorio = new ComentarioRepositorio();
+        //     comentarioRepositorio.Aprovar();
 
-    return RedirectToAction("ComentariosAprovarRecusar");
+        // return RedirectToAction("ComentariosAprovarRecusar");
         }
-            public IActionResult ReprovarComentario(IFormCollection form){
-            ComentarioModel comentario = new ComentarioModel(
-            nomecomentario: form["Nomecomentario"],
-            comentario: form["Comentario"]
-            );
-     comentarioRepositorio.Reprovar(comentario);
-
-    return RedirectToAction("ComentariosAprovarRecusar");
-        }
-}
 }

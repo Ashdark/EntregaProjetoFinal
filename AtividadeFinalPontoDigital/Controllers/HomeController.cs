@@ -44,10 +44,5 @@ namespace AtividadeFinalPontoDigital.Controllers
             ViewData["NomeView"] = "Cadastro - Ponto Digital";
             return View();  
         }
-        public IActionResult Comentarios(){
-        ComentarioRepositorio comentarioRepositorio = new ComentarioRepositorio();
-        ViewData["comentariosaprovados"] = comentarioRepositorio.ListarAprovados();
-        return View();
-    }
     }
 }
